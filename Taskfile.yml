@@ -1,0 +1,16 @@
+# requiere: https://taskfile.dev/#/installation
+version: "3"
+
+vars:
+  PROJECT_PATH: '{{.PWD}}'
+  # ENV: prod or dev
+  ENV: dev # set to prod if you want to deploy to production
+
+# load vars from .env file
+dotenv: ['{{.PROJECT_PATH}}/config/environments/{{.ENV}}/.env']
+
+tasks:
+    build:
+        desc: 'Build the project'
+        cmds: 
+            - GOFLAGS=-mod=mod go build -o bin/load-data main.go

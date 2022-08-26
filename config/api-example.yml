@@ -1,0 +1,20 @@
+app:
+  name: load-data-stock-donation-project
+  version: 1.0.0
+  description: Load data from stock-donation-project to database
+
+environment: dev
+dev:
+  db:
+    user: 
+    password: 
+    host: 
+    port: 
+    database: 
+    max_connections: 
+    ssl_mode: disable
+    engine: postgre
+    log_mode: 4 #gorm log mode 1: off, 2: error, 3: warn, 4: info
+  logging:
+    level: Debug
+    errorLogFile: error.log
