@@ -38,10 +38,6 @@ func JsonObject2Field(jsonObject JsonObject) (models.DocumentField, error) {
 	if err != nil {
 		return models.DocumentField{}, err
 	}
-	brokerID, err := strconv.ParseInt(jsonObject.BrokerID, 10, 32)
-	if err != nil {
-		return models.DocumentField{}, err
-	}
 	return models.DocumentField{
 		Name:               jsonObject.Field,
 		Width:              jsonObject.Width,
@@ -49,7 +45,6 @@ func JsonObject2Field(jsonObject JsonObject) (models.DocumentField, error) {
 		X:                  jsonObject.X,
 		Y:                  jsonObject.Y,
 		PageNumber:         int32(pageNumber),
-		BrokerID:           int32(brokerID),
 		DocumentTemplateId: 1, // TODO: set this value to the template id
 	}, nil
 }

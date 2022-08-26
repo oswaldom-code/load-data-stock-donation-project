@@ -16,7 +16,7 @@ func (s *store) TestDb() error {
 }
 
 func (s *store) InsertData(fields []models.DocumentField) (int64, error) {
-	db := s.db.Session(sessionConfig).Save(&fields)
+	db := s.db.Session(sessionConfig).Omit("broker_id").Omit("deleted_at").Save(&fields)
 	if db.Error != nil {
 		return 0, db.Error
 	}

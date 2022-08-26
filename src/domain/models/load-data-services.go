@@ -13,8 +13,7 @@ type DocumentField struct {
 	Height             int32      `gorm:"column:height"`
 	DataType           string     `gorm:"column:data_type"`
 	PageNumber         int32      `gorm:"column:page_number"`
-	BrokerID           int32      `gorm:"column:broker_id"`
-	DocumentTemplateId int64      `gorm:"column:document_template_id"`
+	DocumentTemplateId int64      `gorm:"column:document_templates_id"`
 	CreatedAt          *time.Time `gorm:"column:created_at"`
 	UpdatedAt          *time.Time `gorm:"column:updated_at"`
 	DeletedAt          *time.Time `gorm:"column:deleted_at"`
